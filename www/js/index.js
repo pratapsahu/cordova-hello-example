@@ -35,11 +35,28 @@ var app = {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
+        var takePictureButtonElement = parentElement.querySelector('.takePictureButton');
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        takePictureButtonElement.addEventListener('click', function(){
+            this.openCamera();
+        }, false);
+    },
+    openCamera: function(){
+        if(navigator.camera){
+            navigator.camera.getPicture(this.cameraSuccess, this.cameraError);
+        }
+    },
+    cameraSuccess: function(imageData){
+        var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
+    },
+    cameraError: function(message){
+        alert('Failed because: ' + message);
     }
 };
 
