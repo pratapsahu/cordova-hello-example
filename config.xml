@@ -2,7 +2,7 @@
 <widget id="com.example.hello" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>HelloWorld</name>
     <description>
-        A sample Hello worl application
+        A sample Hello world application
     </description>
     <author email="er.pratap.kumar.sahu@gmail.com" href="http://www.pratapsahu.blogspot.com">
         Pratap Kumar Sahu
@@ -25,5 +25,6 @@
     <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.4.0" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
+	<plugin name="cordova-plugin-camera" spec="^latest" />
     <icon src="icon.png" />
 </widget>
